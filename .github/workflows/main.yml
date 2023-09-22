@@ -12,7 +12,8 @@ jobs:
 
     strategy:
         matrix:
-          os: [Python 3.9, Python 3.10, Python 3.11]
+            python-version: [3.7, 3.8, 3.9, 3.11]
+            os: [ubuntu-latest]
 
     steps:
     - name: Checkout code
@@ -21,13 +22,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11.5'
+        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: make install
 
     - name: Run tests
-      run: pytest
+      run: make test
 
     - name: Generate Graph and Markdown
       run: python main.py
