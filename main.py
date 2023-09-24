@@ -1,7 +1,3 @@
-# Data Analysis
-import pandas as pd
-import numpy as np
-
 # Data Visulization
 import matplotlib.pyplot as plt
 import seaborn as sns
