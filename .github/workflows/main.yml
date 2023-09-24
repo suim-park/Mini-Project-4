@@ -1,4 +1,4 @@
-name: Python Matrices
+name: Python Matrix
 on:
   push:
     branches: [ "main" ]
