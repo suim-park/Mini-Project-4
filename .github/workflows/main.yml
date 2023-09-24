@@ -1,34 +1,30 @@
-name: CI Python & Polars
+name: CI
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
-    
+
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9, 3.11]
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: make install
-    - name: Run tests
-      run: make test
-    - name: Generate Graph and Markdown
-      run: python main.py
-    - name: Make lint
-      run: make lint
-    - name: format
-      run: make format
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: install packages
+        run: make install
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
+      - name: format  
+        run: make format
