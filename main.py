@@ -12,8 +12,7 @@ import os
 
 # Load the dataset and show the first five columns
 def load_data():
-    data = pd.read_csv("flights.csv")
-    data.head()
+    data = sns.load_dataset("flights")
     return data
 
 
@@ -21,23 +20,21 @@ def load_data():
 def describe_stat():
     data_desc = load_data().describe()
     print(data_desc)
-    print()
     return data_desc
 
 
 # Create a pivot table
 def pivot_table():
-    pivot_table = load_data().pivot(index="month", columns="year", values="passengers")
-    pivot_table.head()
-    return pivot_table
+    pivot = load_data().pivot(index="month", columns="year", values="passengers")
+    return pivot
 
 
 # Draw a heat map and Save the .png File
 def draw_heat_map():
-    ax = sns.heatmap(pivot_table(), cmap="YlGnBu")
-    plt.title("Heatmap of Flight", fontsize=20)
+    sns.heatmap(pivot_table(), cmap="YlGnBu")
+    plt.title("Heatmap of Flights Data (Colored)", fontsize=20)
 
-    directory_path = "C:/Users/suimp/"
+    directory_path = "C:/Users/suimp/OneDrive/Documents/"
     folder_name = "Mini-Project-4"
     save_folder = os.path.join(directory_path, folder_name)
 
@@ -54,6 +51,8 @@ def draw_heat_map():
 
 if __name__ == "__main__":
     load_data()
+    print(load_data())
     describe_stat()
     pivot_table()
+    print(pivot_table())
     draw_heat_map()
