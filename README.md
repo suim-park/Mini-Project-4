@@ -113,4 +113,10 @@ __`Step 3`__ : Verify if the table and plot are displayed correctly.
 __`Step 4`__ : Check whether GitHub Action has different multiple Python versions.</br>
 * `GitHub Actions Matrix Build`</br>
 ![image](https://github.com/suim-park/Mini-Project-4/assets/143478016/d6665a7e-2548-423d-8d35-ae50b603cbb6)</br>
-* `Makefile`: Check install, lint, test, and format at Codespace.</br>
+* `Makefile`: Check test, lint, and format at Codespace.</br>
+<img src="https://github.com/suim-park/Mini-Project-3/assets/143478016/ae600810-c0d0-4828-9cfc-b42eb4d20179.png" width="600" height="300"/></br>
+<img src="https://github.com/suim-park/Mini-Project-3/assets/143478016/49a08396-4666-4a46-8efc-c38ce41ae527.png" width="600" height="140"/></br>
+
+## :ballot_box_with_check: Summary
+
+__By verifying that the Python versions (3.9, 3.10, and 3.11) are built, I have confirmed that the GitHub Actions Matrix has been successfully set up.__</br>
