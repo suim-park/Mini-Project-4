@@ -8,11 +8,10 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9, '3.10', 3.11]
-        os: ubuntu-latest
-    runs-on: ubuntu-latest
+        python-version: [3.9, 3.10.x, 3.11]
 
     steps:
       - name: Checkout code
