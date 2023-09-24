@@ -38,7 +38,7 @@ def draw_heat_map():
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
 
-    save_path = os.path.join(save_folder, f"Heatmap of Flights Data.png")
+    save_path = os.path.join(save_folder, "Heatmap of Flights Data.png")
     plt.savefig(save_path)
 
     plt.show()
